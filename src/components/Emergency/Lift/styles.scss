@@ -1,0 +1,171 @@
+.Lift-wrapper {
+    position: relative;
+
+    height: 100vh;
+    width: 100%;
+}
+
+.Lift-sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: #fff;
+
+    transition: 1s;
+
+    z-index: 2;
+
+    &.ready {
+        width: 350px;
+
+        & .Lift-sidebar-banner {
+            height: 180px;
+
+            & > span {
+                font-size: 34px;
+                width: 280px;
+            }
+        }
+
+        & .Lift-info-panel {
+            position: relative;
+            opacity: 1;
+        }
+
+        & .Lift-loading-anim {
+            opacity: 0;
+        }
+
+        & .Lift-loading-text {
+            opacity: 0 !important;
+        }
+    }
+
+    & > .Lift-loading-anim {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        margin: 50px 80px;
+    }
+
+    & > .Lift-sidebar-banner {
+        position: relative;
+
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        transition: 1s;
+
+        & > span {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            font-size: 60px;
+            width: 400px;
+            height: fit-content;
+
+            margin: 0 auto;
+
+            color: #00A9A1;
+
+            transition: .3s;
+
+            & > .Lift-loading-text {
+                position: absolute;
+                left: 0;
+                bottom: -50px;
+
+                font-size: 25px;
+                color: #AFAFAF;
+
+                opacity: 1;
+
+                transition: .3s;
+            }
+        }
+    }
+
+    & > .Lift-info-panel {
+        position: relative;
+
+        height: calc(100% - 150px);
+        width: 280px;
+
+        margin: 0 auto;
+
+        padding: 15% 0;
+
+        opacity: 0;
+
+        transition: 1.3s;
+        /* transition-delay: 1s; */
+
+        & > .Lift-info-panel-wrapper {
+            position: relative;
+
+            height: 100%;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-evenly;
+
+            & > .Lift-info-item {
+                height: fit-content;
+                width: 100%;
+
+                font-size: 20px;
+
+                & > .Lift-info-label {
+                    display: flex;
+
+                    color: #a1a1a1;
+
+                    & > .Lift-info-icon {
+                        padding-right: 10px;
+                    }
+                }
+
+                & > .Lift-info-value {
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+}
+
+.Lift-video-stream {
+    position: relative;
+    
+    height: 100%;
+    width: calc(100% - 350px);
+
+    margin-left: 350px;
+    
+    background-color: black;
+
+    object-fit: cover;
+
+    z-index: 1;
+}
+
+.Lift-loading {
+    height: fit-content;
+    width: fit-content;
+
+    padding: 30px 50px;
+
+    background-color: #fff;
+}
